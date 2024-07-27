@@ -3,6 +3,7 @@ import './styles/Intro2.css';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
+import Navbar from './Navbar';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +11,7 @@ const Intro2 = () => {
     useGSAP(() => {
         gsap.timeline({
             scrollTrigger: {
-                trigger: '.container1',
+                trigger: ".container1",
                 start: "top top", 
                 pin: true, 
                 pinSpacing: false,
@@ -59,12 +60,18 @@ const Intro2 = () => {
     }, []);
 
     return (
-    <div className="container1">
-        <div className="wrapper1">
-            <h1 className="intro-txt"><span>ANGELA PACO</span></h1>
-            <div id="trigger"></div>
+    <>
+        <div className="container1">
+            <nav>
+                <Navbar/>
+            </nav>
+            <div className="wrapper1">
+                <h1 className="intro-txt"><span>ANGELA PACO</span></h1>
+                <div id="trigger"></div>
+            </div>
         </div>
-    </div>
+    </>
+    
     );
 };
 

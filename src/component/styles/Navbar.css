@@ -16,7 +16,6 @@ ul {
     justify-content: space-between;
     font-family: "JetBrains Mono";
     width: 95vw;
-    position: sticky;
 }
 
 li {

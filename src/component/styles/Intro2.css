@@ -19,6 +19,12 @@
     height: 200vh;
     width: 80vw;
     display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+nav {
+    z-index: 3;
 }
 
 .wrapper1 {
@@ -26,8 +32,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: absolute;
     min-width: 100vw;
+    z-index: 2;
 }
 
 
