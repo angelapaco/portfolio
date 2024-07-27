@@ -1,16 +1,25 @@
-import React from 'react'
+// Navbar.jsx
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './styles/Navbar.css';
 
 const Navbar = () => {
-
   return (
     <ul>
-        <li class="list"><a href="home" class="active">Home</a></li>
-        <li class="list"><a href="about">About</a></li>
-        <li class="list"><a href="works">Works</a></li>
-        <li class="list"><a href="contact">Contact</a></li>
+      <li className="list">
+        <NavLink to="/home" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
+      </li>
+      <li className="list">
+        <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
+      </li>
+      <li className="list">
+        <NavLink to="/works" className={({ isActive }) => isActive ? 'active' : ''}>Works</NavLink>
+      </li>
+      <li className="list">
+        <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
+      </li>
     </ul>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

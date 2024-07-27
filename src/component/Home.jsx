@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/Intro2.css';
+import './styles/Home.css';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
@@ -7,7 +7,7 @@ import Navbar from './Navbar';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Intro2 = () => {
+const Home = () => {
     useGSAP(() => {
         gsap.timeline({
             scrollTrigger: {
@@ -27,12 +27,17 @@ const Intro2 = () => {
 
         function playAudio(index) {
             const audio = new Audio(audioFiles[index]);
-            audio.play();
+            audio.play().catch((error) => {
+                if (error.name === 'NotAllowedError' || error.name === 'DOMException') {
+                    console.warn('Autoplay is disabled. User interaction with the page is required to play audio. https://goo.gl/xX8pDD');
+                } else {
+                    console.error('An error occurred while trying to play the audio:', error);
+                }
+            });
         }
 
         const updateIntro = gsap.timeline({
             scrollTrigger: {
-                trigger: '.trigger',
                 start: '50% 95%',
                 end: '90% 10%',
                 scrub: true,
@@ -66,8 +71,7 @@ const Intro2 = () => {
                 <Navbar/>
             </nav>
             <div className="wrapper1">
-                <h1 className="intro-txt"><span>ANGELA PACO</span></h1>
-                <div id="trigger"></div>
+                <h1 className="intro-txt"><span>Angela</span></h1>
             </div>
         </div>
     </>
@@ -75,4 +79,4 @@ const Intro2 = () => {
     );
 };
 
-export default Intro2;
+export default Home;
