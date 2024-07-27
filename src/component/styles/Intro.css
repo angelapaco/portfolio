@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#name-txt, #course-txt, #passion-txt, #hobby-txt {
+    overflow: hidden;
+    border: solid 2px #ED83B1; 
+    padding: 3em;
+    font-kerning: none;
+}
+
+.container { 
+    border: solid 3px blue;
+    height: 200vh;
+    width: 70vw;
+}
+
+.wrapper {
+    border: solid 2px black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.texts {
+    position: absolute;
+}
+
+h1 {
+    font-family: "Bebas Neue";
+    font-size: 7vw;
+    margin: 0;
+    line-height: 1;
+}
+
+
