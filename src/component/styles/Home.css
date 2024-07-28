@@ -21,10 +21,7 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-}
-
-nav {
-    z-index: 3;
+    /* border: solid 2px black; */
 }
 
 .wrapper1 {
@@ -32,11 +29,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     position: absolute;
     min-width: 100vw;
     z-index: 2;
-}
 
+}
 
 h1 {
     font-family: "Anton";
@@ -47,4 +45,21 @@ h1 {
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
+}
+
+.scroll {
+    font-family: "Jetbrains Mono";
+    color: #141414;
+    font-size: 12px;
+    font-weight: 700;
+    bottom: 30vh;
+    position: absolute;
+    opacity: 1;
+}
+
+.pinner { 
+    width: 100px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
 }

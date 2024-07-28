@@ -7,7 +7,6 @@
 }
 
 #name-txt, #course-txt, #passion-txt, #hobby-txt {
-    overflow: hidden;
     border: solid 2px #ED83B1; 
     padding: 3em;
     font-kerning: none;

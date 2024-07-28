@@ -1,0 +1,12 @@
+.cursor {
+    position: fixed;
+    transition: transform .2s ease;
+    transform-origin: center center;
+    pointer-events: none;
+    z-index: 99;
+    font-family: "Jetbrains Mono";
+    font-size: 12px;
+    font-weight: 700;
+    color: #141414;
+    opacity: 1;
+}

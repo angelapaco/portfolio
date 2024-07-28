@@ -3,10 +3,11 @@ import Navbar from './Navbar'
 
 const About = () => {
   return (
-    <nav>
-      <Navbar/>
-    </nav>
+    <>
+    <div className="text">fhdjsafhjdskalflhjsda</div>
+    </>
+    
   )
 }
 
-export default About
+export default About;
