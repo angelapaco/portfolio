@@ -1,10 +1,12 @@
 import React from 'react'
-import Navbar from './Navbar'
+import './styles/About.css'
 
 const About = () => {
   return (
     <>
-    <div className="text">fhdjsafhjdskalflhjsda</div>
+    <div className="about-container">
+      <div className="text">fhdjsafhjdskalflhjsda</div>
+    </div>
     </>
     
   )

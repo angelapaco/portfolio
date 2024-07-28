@@ -17,9 +17,5 @@ nav {
   /* border: solid 2px green; */
   position: absolute;
   top: 0;
-  z-index: 4;
-}
-
-.content-container {
-  /* border: solid 2px salmon; */
+  z-index: 5;
 }

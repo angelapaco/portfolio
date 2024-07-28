@@ -1,0 +1,34 @@
+.circleOut {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    width: 100%; 
+    height: 100%;
+    background-color: white; 
+    clip-path: circle(100%);
+    transform: translate(-50%, -50%); 
+    clip-path: circle(100%);
+    pointer-events: none; 
+    z-index: 3;
+    opacity: 0;
+}
+
+.circleIn {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    width: 100%; 
+    height: 100%;
+    background-color: white; 
+    transform: translate(-50%, -50%); 
+    pointer-events: none; 
+    clip-path: circle(100%);
+}
+
+.mask {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFEFF6; 
+    position: relative;
+    clip-path: circle(100%);
+}

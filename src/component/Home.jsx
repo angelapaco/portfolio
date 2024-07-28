@@ -4,24 +4,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
 import ScrollDown from './ScrollDown';
+import Transitions from './Transitions';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-    useGSAP(() => {
-        // pinning of container
-        gsap.timeline({
-            scrollTrigger: {
-                // trigger: "app-container",
-                start: "0% top", 
-                end: "bottom top",
-                pin: '.container1', 
-                pinSpacing: false,
-                scrub: true,
-                // markers: {startColor: "pink", endColor: "violet"}
-            }
-        });      
-
+    useGSAP(() => {  
         const audioFiles = [
             '/audio/txtIn.mp3',
             '/audio/txtOut.mp3'

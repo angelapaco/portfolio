@@ -6,12 +6,9 @@ import About from './component/About';
 import Works from './component/Works';
 import Contact from './component/Contact';
 import Navbar from './component/Navbar';
-import Cursor from './component/Cursor';
-import { AnimatePresence } from 'framer-motion';
-import PageTransition from './component/PageTransition';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-
+import Transitions from './component/Transitions';
 
 function App() {
   useGSAP(() => {
@@ -28,6 +25,19 @@ function App() {
     });
   }); 
 
+  useGSAP(() => {
+    gsap.timeline({
+      scrollTrigger: {
+        start: "0% 0%", 
+        end: "bottom top",
+        pin: '.app-container', 
+        pinSpacing: false,
+        scrub: true,
+        // markers: true
+      } 
+    });
+  }); 
+
 
   return (
     <Router>
@@ -37,10 +47,10 @@ function App() {
         </nav>
         <div className="content-container">
           <Routes>
-            <Route path="" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/works" element={<Works />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="" element={<Transitions><Home/></Transitions>} />
+            <Route path="/about" element={<Transitions><About/></Transitions>} />
+            <Route path="/works" element={<Transitions><Works/></Transitions>} />
+            <Route path="/contact" element={<Transitions><Contact/></Transitions>} />
           </Routes>
         </div>
       </div>
@@ -49,38 +59,3 @@ function App() {
 }
 
 export default App;
-
-/*
-function App() {
-  return (
-    <Router>
-      <AppWrapper />
-    </Router>
-  );
-}
-
-
-function AppWrapper() {
-  const location = useLocation();
-
-  return (
-    <AnimatePresence mode="popLayout">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/home" element={<PageTransition><Home /></PageTransition>} />
-        <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-        <Route path="/works" element={<PageTransition><Works /></PageTransition>} />
-        <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-      </Routes>
-    </AnimatePresence>
-  );
-}
-
-function App() {
-  return (
-    <Router>
-      <AppWrapper />
-    </Router>
-  );
-}
-
-export default App; */

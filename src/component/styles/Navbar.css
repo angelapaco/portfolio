@@ -7,6 +7,12 @@
   font-style: normal;
 }
 
+.navbar {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
 ul {
     list-style-type: none;
     padding: 0px;
