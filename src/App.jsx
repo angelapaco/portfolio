@@ -17,7 +17,7 @@ function App() {
   useGSAP(() => {
     gsap.timeline({
       scrollTrigger: {
-        trigger: "app-container",
+        trigger: ".app-container",
         start: "0% 0%", 
         end: "bottom top",
         pin: 'nav', 

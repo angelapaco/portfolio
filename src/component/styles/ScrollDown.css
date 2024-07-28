@@ -1,0 +1,9 @@
+.scroll {
+    font-family: "Jetbrains Mono";
+    color: #141414;
+    font-size: 12px;
+    font-weight: 700;
+    bottom: 25vh;
+    position: absolute;
+    opacity: 1;
+}

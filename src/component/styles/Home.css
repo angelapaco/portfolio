@@ -47,16 +47,6 @@ h1 {
     text-transform: uppercase;
 }
 
-.scroll {
-    font-family: "Jetbrains Mono";
-    color: #141414;
-    font-size: 12px;
-    font-weight: 700;
-    bottom: 30vh;
-    position: absolute;
-    opacity: 1;
-}
-
 .pinner { 
     width: 100px;
     height: 100vh;

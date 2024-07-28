@@ -3,7 +3,7 @@ import './styles/Home.css';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
-import Navbar from './Navbar';
+import ScrollDown from './ScrollDown';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +12,7 @@ const Home = () => {
         // pinning of container
         gsap.timeline({
             scrollTrigger: {
-                trigger: "app-container",
+                // trigger: "app-container",
                 start: "0% top", 
                 end: "bottom top",
                 pin: '.container1', 
@@ -20,40 +20,7 @@ const Home = () => {
                 scrub: true,
                 // markers: {startColor: "pink", endColor: "violet"}
             }
-        }); 
-
-        let fadeTimeline = gsap.timeline({
-            repeat: -1, 
-            repeatDelay: 0.5,
-            ease: "power4.inOut",
-            paused: true 
-        });
-        
-        fadeTimeline.fromTo(
-            ".scroll", 
-            { opacity: 0, ease: "power4.out",  }, 
-            { opacity: 1, duration: 0.5 }) 
-        .to(".scroll", { opacity: 0, duration: 0.5, delay: 0.3}); 
-
-        fadeTimeline.play();
-        
-        // scroll down indicator animation
-        gsap.timeline({
-            scrollTrigger: {
-                start: '40% 75%', 
-                end: '100% 0%',
-                // markers: true,
-                toggleActions: 'play none none reverse',
-                onEnter: () => {
-                    fadeTimeline.pause();
-                    gsap.to('.scroll', { opacity: 0 });
-                },
-                onLeaveBack: () => {
-                    fadeTimeline.play();
-                    gsap.to('.scroll', { opacity: 1 }); 
-                }
-            }
-        });
+        });      
 
         const audioFiles = [
             '/audio/txtIn.mp3',
@@ -104,7 +71,7 @@ const Home = () => {
         <div className="container1">
             <div className="wrapper1">
                 <h1 className="intro-txt"><span>Angela</span></h1>
-                <div className="scroll">please scroll down</div>
+                <ScrollDown/>
             </div>
         </div>
     </>
