@@ -1,12 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+  
 .about-container {
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat";
+    color: #112F9D;
+    background-color: #F4F3EF;
+}
+
+.about-wrapper {
+    border: solid 2px green;
+    margin-top: 100px;
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    row-gap: 20px;
+    align-items: center;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px #112F9D;
+    width: 100%;
+}
+
+.photo {
+    border: solid 2px #112F9D;
+    background-color: #EAB41C;
+    height: 250px;
+    width: 250px;
+    position: relative;
+}
+
+.onex1 {
+    height: 100%;
+}
+
+.texts {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name-abt {
+    border: solid 2px #112F9D;
+    font-size: 60px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+}
+
+.about-txt-wrapper {
+    border: solid 2px #112F9D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.about-txt {
+    font-size: 16px;
+    margin: 0;
+    width: 90%;
+    height: 80%;
+    font-weight: 600;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+.stack {
+    border: solid 4px #112F9D;
+    width: 99%;
+}
+
+.stack-header {
+    text-align: center;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    background-color: #112F9D;
+    color: #F4F3EF;
+    text-transform: uppercase;
 }
 
-.text {
-    text-align: center;
+.stack-txt {
+    font-weight: 800;
 }
+
+.stack-icons {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(50px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;   
+    margin: 20px 0px;
+}
+
+.stack-icon {
+    height: 50px;
+}
+
+
+
+
+
+
+
+  /*
+
+.about-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px black;
+    font-family: "Nunito";
+    color: #141414;
+}
+
+.about-wrapper { 
+    border: solid 2px salmon;
+    width: 45%;
+    background-color: pink;
+}
+
+.header {
+    border: solid 2px brown;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.photo {
+    border: solid 2px green;
+}
+
+.onex1 {
+    background-color: #EBA1B4;
+    border-radius: 100%;
+    height: 200px;
+}
+
+.name {
+    font-weight: 800;
+    font-size: 3rem;
+    margin-left: 1vw;
+    border: solid 2px yellow;
+}
+
+.texts {
+    border: solid 2px fuchsia;
+    font-weight: 600;
+    font-size: 1em;
+    text-align: justify;
+    text-indent: 12%;
+}
+
+@media screen and (max-width: 992px) {
+    .header {
+        flex-direction: row;
+        .name {
+            font-size: 35px;
+        }
+    }
+    .about-wrapper {
+        background-color: yellow;
+        width: 65%;
+    }
+}
+  
+@media screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        .name {
+            font-size: 35px;
+        }
+    }
+    .about-wrapper {
+        background-color: white;
+        width: 70%;
+    }
+} */

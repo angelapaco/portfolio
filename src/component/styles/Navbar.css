@@ -27,6 +27,7 @@ ul {
 li {
     font-size: 0.8em;
     display: flex;
+    user-select: none;
 }
 
 li a {

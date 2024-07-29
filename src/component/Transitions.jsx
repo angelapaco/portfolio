@@ -4,7 +4,6 @@ import { SwitchTransition, Transition } from 'react-transition-group';
 import { gsap } from 'gsap';
 import './styles/Transitions.css';
 
-// Wrapper component that forwards refs
 const PageWrapper = forwardRef(({ children }, ref) => (
   <div ref={ref} className="page">
     {children}

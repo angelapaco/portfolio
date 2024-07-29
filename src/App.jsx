@@ -32,7 +32,7 @@ function App() {
         end: "bottom top",
         pin: '.app-container', 
         pinSpacing: false,
-        scrub: true,
+        scrub: true, 
         // markers: true
       } 
     });

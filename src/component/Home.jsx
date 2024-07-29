@@ -41,10 +41,10 @@ const Home = () => {
         .set('.intro-txt span', { style: "font-size: 8vw;"}, 0.03)
         .call(() => playAudio(0), null, 0.03)
 
-        .set('.intro-txt span', { innerHTML: 'Passionate about <br> <span class="change">Game Development</span>'}, 0.14)
+        .set('.intro-txt span', { innerHTML: 'Game Development <br> enthusiast'}, 0.14)
         .call(() => playAudio(0), null, 0.14)
 
-        .set('.intro-txt span', { innerHTML: "Passionate about <br> Frontend Development"}, 0.25)
+        .set('.intro-txt span', { innerHTML: "Frontend Development <br> enthusiast"}, 0.25)
         .call(() => playAudio(0), null, 0.25)
 
         .set('.intro-txt span', { innerHTML: "Hobbyist <br> artist"}, 0.36)
