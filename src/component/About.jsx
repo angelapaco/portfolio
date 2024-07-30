@@ -3,10 +3,12 @@ import './styles/About.css'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
+import Navbar from './Navbar';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  /*
   useGSAP(() => {
     gsap.timeline({
       scrollTrigger: {
@@ -18,7 +20,7 @@ const About = () => {
         markers: true
       } 
     });
-  }); 
+  }); */
 
   return (
     <>

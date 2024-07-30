@@ -40,11 +40,11 @@ const Transitions = ({ children }) => {
             gsap.set(tsWrapper.current, { autoAlpha: 1, zIndex: 0 });
 
             const onIn = gsap.timeline({ paused: true });
-            onIn.to(circleIn.current, { scale: 1, duration: 0, ease: 'power2' }); // yellow circle covers page before new page loads
-            onIn.to(node, { autoAlpha: 1, duration: 0 }); // new page loads
-            onIn.to(circleOut.current, { autoAlpha: 0, duration: 0 }); // removes lilac circle
-            onIn.to(circleIn.current, { autoAlpha: 1, duration: 0 }); // removes yellow circle
-            onIn.to(mask.current, { clipPath: 'circle(100%)', duration: 0.7, ease: 'power1.inOut' }); // reveals page
+            onIn.to(circleIn.current, { scale: 1, duration: 0, ease: 'power2' });
+            onIn.to(node, { autoAlpha: 1, duration: 0 });
+            onIn.to(circleOut.current, { autoAlpha: 0, duration: 0 }); 
+            onIn.to(circleIn.current, { autoAlpha: 1, duration: 0 }); 
+            onIn.to(mask.current, { clipPath: 'circle(100%)', duration: 0.7, ease: 'power1.inOut' }, 0);
             onIn.play();
           }}
           onExit={() => {
@@ -56,7 +56,7 @@ const Transitions = ({ children }) => {
 
             const onOut = gsap.timeline({ paused: true });
             onOut.to(tsWrapper.current, { duration: 0.5, clipPath: 'circle(100%)', ease: 'none' }, 0);
-            onOut.to(circleOut.current, { duration: 0.5, clipPath: 'circle(100%)', ease: 'none' }, 0); // pink circle covers old page
+            onOut.to(circleOut.current, { duration: 0.5, clipPath: 'circle(100%)', ease: 'none' }, 0);
             onOut.play();
           }}
         >

@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useRef } from 'react';
+
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Home from './component/Home';
@@ -10,42 +11,18 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Transitions from './component/Transitions';
 import { useGSAP } from '@gsap/react';
-import ScrollToTop from './component/ScrollToTop';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useScrollTriggers = (path) => {
-  useEffect(() => {
-    let contentPinner;
-
-    if (path !== '/about') {
-      contentPinner = gsap.timeline({
-        scrollTrigger: {
-          start: "0% 0%", 
-          end: "bottom top",
-          pin: '.content-container', 
-          pinSpacing: false,
-          scrub: true, 
-          // markers: true
-        } 
-      });
-    }
-
-    return () => {
-      if (contentPinner) contentPinner.scrollTrigger.kill();
-    };
-  }, [path]);
-};
-
-function ScrollTriggerManager() {
-  const location = useLocation();
-  useScrollTriggers(location.pathname);
-  return null;
-}
-
 function App() {
+  const location = useLocation();
+  const contentCon = useRef(null);
+
   useGSAP(() => {
-  gsap.timeline({
+    // Clear any previous ScrollTriggers to prevent duplication
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+    gsap.timeline({
       scrollTrigger: {
         trigger: ".app-container",
         start: "0% 0%", 
@@ -56,27 +33,46 @@ function App() {
         // markers: true
       } 
     });
-  });
+
+    if (location.pathname === '/') {
+      gsap.set(contentCon.current, { height: '200vh' });
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".app-container",
+          start: "0% 0%", 
+          end: "bottom top",
+          pin: '.content-container', 
+          pinSpacing: false,
+          scrub: true,
+          // markers: true
+        } 
+      });
+    } else {
+      gsap.set(contentCon.current, { height: '100vh' });
+    }
+  }, [location.pathname]); // Re-run the effect whenever the route changes
 
   return (
-    <Router>
-      <ScrollTriggerManager />
-      <ScrollToTop />
-      <div className="app-container">
-        <nav>
-          <Navbar />
-        </nav>
-        <div className="content-container">
-          <Routes>
-            <Route path="/" element={<Transitions><Home /></Transitions>} />
-            <Route path="/about" element={<Transitions><About /></Transitions>} />
-            <Route path="/works" element={<Transitions><Works /></Transitions>} />
-            <Route path="/contact" element={<Transitions><Contact /></Transitions>} />
-          </Routes>
-        </div>
+    <div className="app-container">
+      <nav>
+        <Navbar />
+      </nav>
+      <div ref={contentCon} className="content-container">
+        <Routes>
+          <Route path="/" element={<Transitions><Home /></Transitions>} />
+          <Route path="/about" element={<Transitions><About /></Transitions>} />
+          <Route path="/works" element={<Transitions><Works /></Transitions>} />
+          <Route path="/contact" element={<Transitions><Contact /></Transitions>} />
+        </Routes>
       </div>
-    </Router>
+    </div>
   );
 }
 
-export default App;
+export default function RootApp() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}
