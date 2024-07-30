@@ -8,10 +8,10 @@
 
 .container1 { 
     height: 200vh;
-    width: 80vw;
     display: flex;
     flex-direction: column;
     width: 100vw;
+    background-color: #F4F3EF;
     /* border: solid 2px black; */
 }
 

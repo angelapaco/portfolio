@@ -1,6 +1,10 @@
 import React from 'react'
 import './styles/About.css'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from '@gsap/react';
 
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   return (
@@ -21,51 +25,42 @@ const About = () => {
             </div>
           </section>
           <section className="stack">
-            <div className="stack-header">   
-              <h2 className="stack-txt">stack</h2>
+            <div className="header-abt">   
+              <h2 className="txt">stack</h2>
             </div>
-            <div className="stack-icons">
-             <img className="stack-icon" src="public/icons/css.png" alt=""/>
-             <img className="stack-icon" src="public/icons/github.png" alt=""/>
-             <img className="stack-icon" src="public/icons/GSAP.png" alt=""/>
-             <img className="stack-icon" src="public/icons/html.png" alt=""/>
-             <img className="stack-icon" src="public/icons/js.png" alt=""/>
-             <img className="stack-icon" src="public/icons/jsx.png" alt=""/>
-             <img className="stack-icon" src="public/icons/MySQL.png" alt=""/>
-             <img className="stack-icon" src="public/icons/php.png" alt=""/>
-             <img className="stack-icon" src="public/icons/react.png" alt=""/>
-             <img className="stack-icon" src="public/icons/scss.png" alt=""/>
-             <img className="stack-icon" src="public/icons/tailwind-css.png" alt=""/>
-             <img className="stack-icon" src="public/icons/unity.png" alt=""/>
-             <img className="stack-icon" src="public/icons/vscode.png" alt=""/>
-             <img className="stack-icon" src="public/icons/vite.png" alt=""/>
+            <div className="icons">
+             <img className="icon" src="public/icons/stack/css.png" alt=""/>
+             <img className="icon" src="public/icons/stack/github.png" alt=""/>
+             <img className="icon" src="public/icons/stack/GSAP.png" alt=""/>
+             <img className="icon" src="public/icons/stack/html.png" alt=""/>
+             <img className="icon" src="public/icons/stack/js.png" alt=""/>
+             <img className="icon" src="public/icons/stack/jsx.png" alt=""/>
+             <img className="icon" src="public/icons/stack/MySQL.png" alt=""/>
+             <img className="icon" src="public/icons/stack/php.png" alt=""/>
+             <img className="icon" src="public/icons/stack/react.png" alt=""/>
+             <img className="icon" src="public/icons/stack/scss.png" alt=""/>
+             <img className="icon" src="public/icons/stack/tailwind-css.png" alt=""/>
+             <img className="icon" src="public/icons/stack/unity.png" alt=""/>
+             <img className="icon" src="public/icons/stack/vscode.png" alt=""/>
+             <img className="icon" src="public/icons/stack/vite.png" alt=""/>
             </div>
           </section>
           <section className="multimedia">
-            <h2 className="multimedia-txt">multimedia</h2>
-            <div className="multimedia-icons">
-
+            <div className="header-abt">
+              <h2 className="txt">multimedia</h2>
+            </div>
+            <div className="icons">
+              <img className="icon" src="public/icons/multimedia/after-effects.png" alt=""/>
+              <img className="icon" src="public/icons/multimedia/blender.png" alt=""/>
+              <img className="icon" src="public/icons/multimedia/figma.png" alt=""/>
+              <img className="icon" src="public/icons/multimedia/photoshop.png" alt=""/>
+              <img className="icon" src="public/icons/multimedia/rive.png" alt=""/>
+              <img className="icon" src="public/icons/multimedia/svp.png" alt=""/>
             </div>
           </section>
         </div>
       </section>
     </>
-
-    /*
-    <div className="about-container">
-      <div className="about-wrapper">
-        <div className="header">
-          <div className="photo">
-            <img className="onex1" src="public/audio/1x1.png" alt="my 1x1"/>
-          </div>
-          <div className="name">Angela Paco</div>
-        </div>
-        <div className="texts">
-          <p>I’m a third-year computer science student with a strong passion for frontend and game development. My interest in these fields is driven by my love for the arts and the immense satisfaction I get from bringing my creative ideas to life. </p>
-        </div>
-      </div>
-    </div> */
-    
   )
 }
 

@@ -19,14 +19,12 @@
 }
 
 .about-wrapper {
-    border: solid 2px green;
     margin-top: 100px;
     height: 100vh;
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    row-gap: 20px;
+    row-gap: 25px;
     align-items: center;
 }
 
@@ -76,7 +74,7 @@
 }
 
 .about-txt {
-    font-size: 16px;
+    font-size: 1em;
     margin: 0;
     width: 90%;
     height: 80%;
@@ -85,12 +83,14 @@
     text-indent: 20px;
 }
 
-.stack {
+.stack, .multimedia {
     border: solid 4px #112F9D;
     width: 99%;
+    display: flex;
+    flex-direction: column;
 }
 
-.stack-header {
+.header-abt {
     text-align: center;
     height: 50px;
     display: flex;
@@ -101,22 +101,23 @@
     text-transform: uppercase;
 }
 
-.stack-txt {
+.txt {
     font-weight: 800;
 }
 
-.stack-icons {
+.icons {
     display: grid;
-    grid-template-columns: repeat(7, minmax(50px, 1fr));
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-gap: 55px;
     justify-items: center;
-    align-items: center;   
-    margin: 20px 0px;
+    margin: 20px;
 }
 
-.stack-icon {
+.icon {
     height: 50px;
 }
+
+
 
 
 

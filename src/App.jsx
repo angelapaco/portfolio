@@ -25,6 +25,7 @@ function App() {
     });
   }); 
 
+  /*
   useGSAP(() => {
     gsap.timeline({
       scrollTrigger: {
@@ -36,7 +37,7 @@ function App() {
         // markers: true
       } 
     });
-  }); 
+  }); */
 
 
   return (

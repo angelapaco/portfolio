@@ -31,14 +31,15 @@ li {
 }
 
 li a {
-    color: #ED83B1;
     text-align: center;
     text-decoration: none;
+    color: #112F9D;
+    font-weight: 400;
 }
 
 li a:hover {
     font-weight: 800;
-    color: #5c5db9;
+    color: #EAB41C;
 }
 
 .active {
