@@ -1,4 +1,13 @@
-.circleOut {
+.transition-wrapper {
+    position: fixed; /* Ensure it stays relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Ensure it doesn't interfere with user interactions */
+}
+
+.circleOut, .circleIn {
     position: absolute; 
     left: 0; 
     right: 0; 
@@ -10,21 +19,15 @@
     clip-path: circle(100%);
     clip-path: circle(100%);
     pointer-events: none; 
+}
+
+.circleOut {
     z-index: 3;
     opacity: 0;
 }
 
 .circleIn {
-    position: absolute; 
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 100vw;
-    height: 100vh;
-    background-color: #EAB41C; 
-    clip-path: circle(100%);
-    pointer-events: none; 
+    opacity: 0;
 }
 
 .mask {

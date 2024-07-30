@@ -14,7 +14,7 @@ const Home = () => {
             scrollTrigger: {
                 start: "0% 0%", 
                 end: "bottom top",
-                pin: '.app-container', 
+                pin: '.container1', 
                 pinSpacing: false,
                 scrub: true, 
                 // markers: true
