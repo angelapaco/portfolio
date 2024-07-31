@@ -7,12 +7,11 @@
 }
 
 .container1 { 
-    height: 200vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     width: 100vw;
     background-color: #F4F3EF;
-    
     /* border: solid 2px black; */
 }
 
@@ -22,8 +21,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: absolute;
     min-width: 100vw;
+    border: solid 2px green;
 }
 
 h1 {

@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-
+import React, { useRef, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Home from './component/Home';
@@ -17,9 +16,9 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const location = useLocation();
   const contentCon = useRef(null);
+  const [refreshHome, setRefreshHome] = useState(false);
 
   useGSAP(() => {
-    // Clear any previous ScrollTriggers to prevent duplication
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
     gsap.timeline({
@@ -32,10 +31,12 @@ function App() {
         scrub: true,
         // markers: true
       } 
-    });
+    }); 
 
     if (location.pathname === '/') {
+      console.log("200vh height");
       gsap.set(contentCon.current, { height: '200vh' });
+      setRefreshHome(true); // Trigger re-render of Home component
       gsap.timeline({
         scrollTrigger: {
           trigger: ".app-container",
@@ -48,9 +49,17 @@ function App() {
         } 
       });
     } else {
+      console.log("100vh height");
       gsap.set(contentCon.current, { height: '100vh' });
+      setRefreshHome(false);
     }
-  }, [location.pathname]); // Re-run the effect whenever the route changes
+  }, [location.pathname]); 
+
+  useEffect(() => {
+    if (refreshHome) {
+      setRefreshHome(false); // Reset the state after setting it
+    }
+  }, [refreshHome]);
 
   return (
     <div className="app-container">
@@ -59,7 +68,7 @@ function App() {
       </nav>
       <div ref={contentCon} className="content-container">
         <Routes>
-          <Route path="/" element={<Transitions><Home /></Transitions>} />
+          <Route path="/" element={<Transitions><Home key={refreshHome} /></Transitions>} />
           <Route path="/about" element={<Transitions><About /></Transitions>} />
           <Route path="/works" element={<Transitions><Works /></Transitions>} />
           <Route path="/contact" element={<Transitions><Contact /></Transitions>} />
