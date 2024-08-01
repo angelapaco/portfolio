@@ -1,37 +1,19 @@
 import React from 'react'
 import './styles/About.css'
+import './styles/Tooltip.css'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from '@gsap/react';
-import Navbar from './Navbar';
+import { Tooltip } from 'react-tooltip'
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  /*
-  useGSAP(() => {
-    gsap.timeline({
-      scrollTrigger: {
-        start: "0% 0%", 
-        end: "bottom top",
-        pin: '.about-container', 
-        pinSpacing: false,
-        scrub: true,
-        markers: true
-      } 
-    });
-  }); */
-
   return (
     <>
       <div className="nav-space"></div> 
       <section className='about-container'>
         <div className="about-wrapper">
           <section className="about-me">
-            {/*
-            <div className="photo">
-              <img className="onex1" src="/1x1.png" alt="1x1"/>
-            </div> */}
             <div className="texts">
               <div className="name-txt">
                 <h2 className="name">Angela Paco</h2>
@@ -46,20 +28,20 @@ const About = () => {
               <h2 className="header-txt">stack</h2>
             </div>
             <div className="icons">
-             <img className="icon" src="/icons/stack/css.png" alt=""/>
-             <img className="icon" src="/icons/stack/github.png" alt=""/>
-             <img className="icon" src="/icons/stack/GSAP.png" alt=""/>
-             <img className="icon" src="/icons/stack/html.png" alt=""/>
-             <img className="icon" src="/icons/stack/js.png" alt=""/>
-             <img className="icon" src="/icons/stack/jsx.png" alt=""/>
-             <img className="icon" src="/icons/stack/MySQL.png" alt=""/>
-             <img className="icon" src="/icons/stack/php.png" alt=""/>
-             <img className="icon" src="/icons/stack/react.png" alt=""/>
-             <img className="icon" src="/icons/stack/scss.png" alt=""/>
-             <img className="icon" src="/icons/stack/tailwind-css.png" alt=""/>
-             <img className="icon" src="/icons/stack/unity.png" alt=""/>
-             <img className="icon" src="/icons/stack/vscode.png" alt=""/>
-             <img className="icon" src="/icons/stack/vite.png" alt=""/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="CSS3" src="/icons/stack/css.png" alt="CSS logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="Github" src="/icons/stack/github.png" alt="Github logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="GSAP" src="/icons/stack/GSAP.png" alt="GSAP logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="HTML5" src="/icons/stack/html.png" alt="HTML logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="JS" src="/icons/stack/js.png" alt="JS logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="JSX" src="/icons/stack/jsx.png" alt="JSX logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="MySQL" src="/icons/stack/MySQL.png" alt="MySQL logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="PHP" src="/icons/stack/php.png" alt="PHP logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="React" src="/icons/stack/react.png" alt="React logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="SASS" src="/icons/stack/sass.png" alt="SASS logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="Tailwind-CSS" src="/icons/stack/tailwind-css.png" alt="Tailwind-CSS logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="Unity" src="/icons/stack/unity.png" alt="Unity logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="Visual Studio Code" src="/icons/stack/vscode.png" alt="Visual Studio Code logo"/>
+             <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="Vite" src="/icons/stack/vite.png" alt="Vite logo"/>
             </div>
           </section>
           <section className="multimedia">
@@ -67,13 +49,14 @@ const About = () => {
               <h2 className="header-txt">multimedia</h2>
             </div>
             <div className="icons">
-              <img className="icon" src="/icons/multimedia/after-effects.png" alt=""/>
-              <img className="icon" src="/icons/multimedia/blender.png" alt=""/>
-              <img className="icon" src="/icons/multimedia/figma.png" alt=""/>
-              <img className="icon" src="/icons/multimedia/photoshop.png" alt=""/>
-              <img className="icon" src="/icons/multimedia/rive.png" alt=""/>
-              <img className="icon" src="/icons/multimedia/svp.png" alt=""/>
+              <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="After Effects" src="/icons/multimedia/after-effects.png" alt="After Effects logo"/>
+              <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="Blender" src="/icons/multimedia/blender.png" alt="Blender logo"/>
+              <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="Figma" src="/icons/multimedia/figma.png" alt="Figma logo"/>
+              <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="Photoshop" src="/icons/multimedia/photoshop.png" alt="Photoshop logo"/>
+              <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="Rive" src="/icons/multimedia/rive.png" alt="Rive logo"/>
+              <img className="icon" data-tooltip-id="tooltip" data-tooltip-content="Sone Vegas Pro" src="/icons/multimedia/svp.png" alt="Sony Vegas Pro logo"/>
             </div>
+            <Tooltip id="tooltip" />
           </section>
         </div>
       </section>
@@ -81,4 +64,4 @@ const About = () => {
   )
 }
 
-export default About;
+export default About

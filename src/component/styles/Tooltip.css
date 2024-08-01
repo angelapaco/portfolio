@@ -1,0 +1,14 @@
+#tooltip {
+    color: #F4F3EF;
+    background-color: #112F9D;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 10px;
+    font-weight: 500;
+    --rt-opacity: 1;
+    --rt-transition-show-delay: 0.1s;
+    --rt-transition-closing-delay: 0.1s;
+}
