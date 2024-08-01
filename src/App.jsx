@@ -71,6 +71,7 @@ function App() {
           <Route path="/" element={<Transitions><Home key={refreshHome} /></Transitions>} />
           <Route path="/about" element={<Transitions><About /></Transitions>} />
           <Route path="/works" element={<Transitions><Works /></Transitions>} />
+          <Route path="/works/site" element={<Works />} />
           <Route path="/contact" element={<Transitions><Contact /></Transitions>} />
         </Routes>
       </div>

@@ -5,17 +5,17 @@ import './styles/Navbar.css';
 const Navbar = () => {
   return (
     <div className="navbar">
-      <ul>
-        <li className="list">
+      <ul className='nav-ul'>
+        <li className="nav-list">
           <NavLink to="" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
         </li>
-        <li className="list">
+        <li className="nav-list">
           <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
         </li>
-        <li className="list">
+        <li className="nav-list">
           <NavLink to="/works" className={({ isActive }) => isActive ? 'active' : ''}>Works</NavLink>
         </li>
-        <li className="list">
+        <li className="nav-list">
           <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
         </li>
       </ul>

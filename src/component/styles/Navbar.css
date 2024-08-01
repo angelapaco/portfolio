@@ -13,7 +13,7 @@
     justify-content: center;
 }
 
-ul {
+ul.nav-ul {
     list-style-type: none;
     padding: 0px;
     margin: 15px 0px;
@@ -25,24 +25,24 @@ ul {
     width: 95vw;
 }
 
-li {
-    font-size: 0.9em;
+li.nav-list {
+    font-size: 0.85em;
     display: flex;
     user-select: none;
 }
 
-li a {
+li.nav-list a {
     text-align: center;
     text-decoration: none;
-    color: #112F9D;
-    font-weight: 500;
+    color: #1D448C;
+    font-weight: 400;
 }
 
-li a:hover {
+li.nav-list a:hover {
     font-weight: 800;
     color: #EAB41C;
 }
 
-.active {
+li.nav-list .active {
     font-weight: 800;
 }

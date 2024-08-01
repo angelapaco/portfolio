@@ -22,7 +22,7 @@
     justify-content: center;
     align-items: center;
     font-family: "Jetbrains Mono";
-    color: #112F9D;
+    color: #1D448C;
     background-color: #F4F3EF;
     top: 50px;
     position: absolute;
@@ -43,7 +43,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: solid 1px #112F9D;
+    border: solid 1px #1D448C;
     width: 100%;
 }
 
@@ -53,17 +53,22 @@
     flex-direction: column;
 }
 
+.name-txt {
+    background-color: #1D448C;
+}
+
 .name {
-    border: solid 1px #112F9D;
+    border: solid 1px #1D448C;
     font-size: 30px;
     margin: 0;
     text-transform: uppercase;
     font-weight: 900;
     text-align: center;
+    color: #F4F3EF;
 }
 
 .about-txt-wrapper {
-    border: solid 1px #112F9D;
+    border: solid 1px #1D448C;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,7 +86,7 @@
 }
 
 .stack, .multimedia {
-    border: solid 2px #112F9D;
+    border: solid 2px #1D448C;
     width: 99.8%;
     display: flex;
     flex-direction: column;
@@ -93,17 +98,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #F4F3EF;
+    background-color: #1D448C;
     text-transform: uppercase;
-    border-bottom: solid 2px #112F9D;
+    border-bottom: solid 2px #1D448C;
     box-sizing: border-box;
 }
 
 .header-txt {
-    font-weight: 800;
+    font-weight: 500;
     font-size: 17px;
-    font-weight: 800;
-    color: #112F9D;
+    color: #F4F3EF;
 }
 
 .icons {
