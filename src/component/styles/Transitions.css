@@ -1,10 +1,10 @@
 .transition-wrapper {
-    position: fixed; /* Ensure it stays relative to the viewport */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    pointer-events: none; /* Ensure it doesn't interfere with user interactions */
+    pointer-events: none; 
 }
 
 .circleOut, .circleIn {

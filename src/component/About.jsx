@@ -24,25 +24,26 @@ const About = () => {
 
   return (
     <>
-      {/* <div className="nav-space"></div> */}
+      <div className="nav-space"></div> 
       <section className='about-container'>
         <div className="about-wrapper">
           <section className="about-me">
+            {/*
             <div className="photo">
               <img className="onex1" src="/1x1.png" alt="1x1"/>
-            </div>
+            </div> */}
             <div className="texts">
               <div className="name-txt">
-                <h2 className="name-abt">Angela Paco</h2>
+                <h2 className="name">Angela Paco</h2>
               </div>
               <div className="about-txt-wrapper">
-                <p className='about-txt'>I’m a third-year computer science student with a strong passion for frontend and game development. My interest in these fields is driven by my love for the arts and the immense satisfaction I get from bringing my creative ideas to life.</p>
+                <p className='about-txt'>I’m a third-year computer science student with a strong passion for frontend and game development. My interest in these fields is driven by my love for the arts and the satisfaction I get from bringing my ideas to life.</p>
               </div>
             </div>
           </section>
           <section className="stack">
             <div className="header-abt">   
-              <h2 className="txt">stack</h2>
+              <h2 className="header-txt">stack</h2>
             </div>
             <div className="icons">
              <img className="icon" src="/icons/stack/css.png" alt=""/>
@@ -63,7 +64,7 @@ const About = () => {
           </section>
           <section className="multimedia">
             <div className="header-abt">
-              <h2 className="txt">multimedia</h2>
+              <h2 className="header-txt">multimedia</h2>
             </div>
             <div className="icons">
               <img className="icon" src="/icons/multimedia/after-effects.png" alt=""/>

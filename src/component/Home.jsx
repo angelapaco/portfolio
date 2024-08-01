@@ -42,7 +42,7 @@ const Home = () => {
                 start: '50% 95%',
                 end: '90% 10%',
                 scrub: true,
-                markers: {startColor: "pink", endColor: "violet"},
+                // markers: {startColor: "pink", endColor: "violet"},
             }
         })
         updateTexts
