@@ -24,18 +24,16 @@
     font-family: "Jetbrains Mono";
     color: #1D448C;
     background-color: #F4F3EF;
-    top: 50px;
     position: absolute;
 }
 
 .about-wrapper {
-    height: 80vh;
+    height: 70vh;
     width: 45%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    row-gap: 40px;
+    row-gap: 20px;
+    justify-content: space-between;
 }
 
 .about-me {
@@ -43,7 +41,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: solid 1px #1D448C;
     width: 100%;
 }
 
@@ -58,7 +55,6 @@
 }
 
 .name {
-    border: solid 1px #1D448C;
     font-size: 30px;
     margin: 0;
     text-transform: uppercase;
@@ -68,11 +64,11 @@
 }
 
 .about-txt-wrapper {
-    border: solid 1px #1D448C;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    border: solid 2px #1D448C;
 }
 
 .about-txt {
