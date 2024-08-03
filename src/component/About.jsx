@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   return (
     <>
-      <div className="nav-space"></div> 
       <section className='about-container'>
         <div className="about-wrapper">
           <section className="about-me">

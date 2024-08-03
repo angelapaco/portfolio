@@ -11,6 +11,8 @@
     width: 100vw;
     display: flex;
     justify-content: center;
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
 }
 
 ul.nav-ul {
