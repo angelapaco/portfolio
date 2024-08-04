@@ -82,6 +82,11 @@ const Works = () => {
   const [playBtnHover] = useSound(menuPopSrc);
   const [playBtnClick] = useSound(btnClickSrc);
 
+  function openVid() {
+    const videoUrl = "/thumbnails/capture.mp4";
+    window.open(videoUrl, '_blank');
+  }
+
   const renderContent = () => {
     switch (location.pathname) {
       case '/works/site':
@@ -244,6 +249,7 @@ const Works = () => {
                   <h2 className="site-title">Capture</h2>
                 </div>
                 <div className="site-thumbnail" onClick={() => openAboutCard(0)} >
+                  <button onClick={openVid} onMouseEnter={playBtnHover} className='watch-btn'>Full Screen with Audio</button>
                   <video autoPlay muted playsInline loop preload="true" className="thumbnail">
                     <source src="/thumbnails/capture.mp4" type="video/mp4"/>
                   </video>
@@ -251,7 +257,7 @@ const Works = () => {
                     <h3 className="site-about-header">About</h3>
                     <p className="site-about-txt">"Capture" is a 3D horror game developed in Unity for our game development course in third-year computer science. Players are equipped with a polaroid camera that can temporarily stun a chasing entity when photographed. Limited polaroid films are scattered throughout the area for players to find and use strategically. The objective is to gather items and escape without being captured.</p>
                     <h3 className="site-about-header about-header">Role</h3>
-                    <p className="site-about-txt">My responsibilities included coming up with the game concept, designing, planning the layout of the environment, and programming the entire game, excluding the main menu UI. <br/><br/> P.S. The models are from sketchfab, the character and its animations are from mixamo, and the audio is sourced from the internet.</p>
+                    <p className="site-about-txt">My responsibilities included coming up with the game concept, designing, planning the layout of the environment, and programming the entire game, excluding the main menu UI. <br/><br/> P.S. The models are from sketchfab, the character and its animations are from mixamo, and the sfx are sourced from the internet.</p>
                   </div>
                 </div>
                 <div className="site-footer">

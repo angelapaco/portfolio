@@ -258,8 +258,8 @@ button {
     cursor: pointer;
     text-transform: uppercase;
     position: absolute;
-    bottom: 15px;
-    right: 15px;
+    bottom: 10px;
+    right: 10px;
     z-index: 5;
 }
 
@@ -271,6 +271,15 @@ button:hover {
 button:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
+}
+
+.watch-btn {
+    opacity: 0.3;
+    transition: all 0.05s ease;
+}
+
+.watch-btn:hover {
+    opacity: 1;
 }
 
 @media screen and (max-width: 1400px) {
