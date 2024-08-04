@@ -8,12 +8,11 @@ const Navbar = () => {
   const popSound = hoverPop;
   const [play] = useSound(popSound)
 
-
   return (
     <div className="navbar">
       <ul className='nav-ul'>
         <li className="nav-list" onMouseEnter={play}>
-          <NavLink to="" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
+          <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
         </li>
         <li className="nav-list" onMouseEnter={play}>
           <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
