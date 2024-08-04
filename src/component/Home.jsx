@@ -4,6 +4,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollDown from './ScrollDown';
 import { useGSAP } from '@gsap/react';
+import txtIn from './src/assets/audio/txtIn.mp3';
+import txtOut from './src/assets/audio/txtOut.mp3';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,8 +24,7 @@ const Home = () => {
         });
 
         const audioFiles = [
-            './src/assets/audio/txtIn.mp3',
-            './src/assets/audio/txtOut.mp3'
+            {txtIn}, {txtOut}
         ]
 
         function playAudio(index) {
