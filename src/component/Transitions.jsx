@@ -32,7 +32,6 @@ const Transitions = ({ children }) => {
           timeout={550}
           nodeRef={nodeRef}
           onEnter={() => {
-            console.log("page enter");
             const node = nodeRef.current;
             gsap.set(node, { autoAlpha: 1, scale: 1 });
             gsap.set(circleIn.current, { autoAlpha: 1, scale: 0 });
@@ -48,7 +47,6 @@ const Transitions = ({ children }) => {
             onIn.play();
           }}
           onExit={() => {
-            console.log("page exit");
             const node = nodeRef.current;
             gsap.set(node, { autoAlpha: 1 });
             gsap.set(circleOut.current, { autoAlpha: 1, clipPath: 'circle(0%)' });
