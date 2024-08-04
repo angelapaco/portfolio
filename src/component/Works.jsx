@@ -5,6 +5,9 @@ import './styles/Tooltip.css'
 import Marquee from "react-fast-marquee";
 import { gsap } from "gsap";
 import { BrowserRouter as Router, Route, Routes, NavLink, useLocation } from 'react-router-dom';
+import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
+import PixelArtSlider from './PixelArtSlider';
+import BlenderSlider from './BlenderSlider';
 
 const Works = () => {
   let visibilityState = [false];
@@ -56,6 +59,18 @@ const Works = () => {
   }
   
   const location = useLocation();
+
+  const { rive, RiveComponent } = useRive({
+    src: '/multimedia/AP-character.riv',
+    stateMachines: "State Machine",
+    layout: new Layout({
+      fit: Fit.Cover, // Change to: rive.Fit.Contain, or Cover
+      alignment: Alignment.Center,
+    }),
+    autoplay: true,
+  });
+
+  
 
   const renderContent = () => {
     switch (location.pathname) {
@@ -120,7 +135,7 @@ const Works = () => {
                     <h3 className="site-about-header">About</h3>
                     <p className="site-about-txt">Sweets District is a frontend-focused website project for a bakeshop during our first year in college.</p>
                     <h3 className="site-about-header about-header">Role</h3>
-                    <p className="site-about-txt">My responsibilities included the frontend development of the home page, about page, contact, and the navigation bar using HTML, CSS, and JavaScript. <br/><br/> PS: The photos on the home and about pages were sourced from the internet.</p>
+                    <p className="site-about-txt">My responsibilities included the frontend development of the home page, about page, contact, and the navigation bar using HTML, CSS, and JavaScript. <br/><br/> P.S. The photos on the home and about pages are sourced from the internet.</p>
                   </div>
                 </div>
                 <div className="site-footer">
@@ -191,7 +206,7 @@ const Works = () => {
                     <h3 className="site-about-header">About</h3>
                     <p className="site-about-txt">This site is a project made during our third year to demonstrate the bubble sort algorithm using Javascript.</p>
                     <h3 className="site-about-header about-header">Role</h3>
-                    <p className="site-about-txt">My responsibilities included designing the site and implementing user input sorting using the bubble sort algorithm with JavaScript.</p>
+                    <p className="site-about-txt">My responsibilities included designing the site and implementing user input sorting using the bubble sort algorithm with JavaScript.<br/><br/> P.S. the photos (background and bubble) are sourced from the internet.</p>
                   </div>
                 </div>
                 <div className="site-footer">
@@ -212,14 +227,147 @@ const Works = () => {
       case '/works/game':
         return (
           <>
+            <div className="display-header">game</div>
+            <section className="display-window">
+              <section className="site life-flow">
+                <div className="site-header">
+                  <h2 className="site-title">Capture</h2>
+                </div>
+                <div className="site-thumbnail" onClick={() => openAboutCard(0)} >
+                  <video autoPlay muted playsInline loop preload="true" className="thumbnail">
+                    <source src="/thumbnails/capture.mp4" type="video/mp4"/>
+                  </video>
+                  <div className="site-about game-about" id="site-about-0">
+                    <h3 className="site-about-header">About</h3>
+                    <p className="site-about-txt">"Capture" is a 3D horror game developed in Unity for our game development course in third-year computer science. Players are equipped with a polaroid camera that can temporarily stun a chasing entity when photographed. Limited polaroid films are scattered throughout the area for players to find and use strategically. The objective is to gather items and escape without being captured.</p>
+                    <h3 className="site-about-header about-header">Role</h3>
+                    <p className="site-about-txt">My responsibilities included coming up with the game concept, designing, planning the layout of the environment, and programming the entire game, excluding the main menu UI. <br/><br/> P.S. The models are from sketchfab, the character and its animations are from mixamo, and the audio is sourced from the internet.</p>
+                  </div>
+                </div>
+                <div className="site-footer">
+                  <div className="footer-part">
+                    <Marquee pauseOnHover="true" autoFill="true">
+                      <p className="footer-txt">Game Design</p>
+                      <p className="footer-txt">3D</p>
+                      <p className="footer-txt">Unity</p>
+                    </Marquee>
+                  </div>
+                </div> 
+              </section>
+            </section>
           </>
         );
       case '/works/multimedia':
         return (
-          <div className="display-multimedia-window">
-            <div className="display-header">multimedia</div>
-            {/* Content for the multimedia section */}
-          </div>
+          <>
+          <div className="display-header">Multimedia</div>
+            <section className="display-window">
+              <section className="site rive-animation">
+                <div className="site-header">
+                  <h2 className="site-title">Animation with Rive</h2>
+                </div>
+                <div className="site-thumbnail rive-window">
+                  <RiveComponent/>
+                  <button onClick={() => openAboutCard(0)} >about</button>
+                  <div className="site-about" id="site-about-0" onClick={() => openAboutCard(0)} >
+                    <h3 className="site-about-header">About</h3>
+                    <p className="site-about-txt">My animated character in Rive. The first project made to explore Rive and it's use with React.</p>
+                  </div>
+                </div>
+                <div className="site-footer">
+                  <div className="footer-part">
+                    <Marquee pauseOnHover="true" autoFill="true">
+                      <p className="footer-txt">Design</p>
+                      <p className="footer-txt">Illustration</p>
+                      <p className="footer-txt">Animation</p>
+                      <p className="footer-txt">Rive</p>
+                      <p className="footer-txt">React</p>
+                      <p className="footer-txt">2D</p>
+                      <p className="footer-txt">Interactive</p>
+                    </Marquee>
+                  </div>
+                </div> 
+              </section>
+
+              <section className="site Pixel Art">
+                <div className="site-header">
+                  <h2 className="site-title">Pixel art with Pixilart</h2>
+                  <div className="links">
+                    <a href="https://scratch.mit.edu/users/ja9ice/" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="scratch profile" ><img className="link-icons" src="/svg/scratch.svg" alt="scratch logo"/></a>
+                  </div>
+                </div>
+                <div className="site-thumbnail pixel-art-window">
+                  <button onClick={() => openAboutCard(1)} >about</button>
+                  <PixelArtSlider/>
+                  <div className="site-about" id="site-about-1" onClick={() => openAboutCard(1)} >
+                    <h3 className="site-about-header">About</h3>
+                    <p className="site-about-txt">These are pixel arts I've done in pixilart. These were used for the game projects done in Scratch MIT for familiarization with game design in our game development course in third-year computer science.</p>
+                  </div>
+                </div>
+                <div className="site-footer">
+                  <div className="footer-part">
+                    <Marquee pauseOnHover="true" autoFill="true">
+                      <p className="footer-txt">Sprite</p>
+                      <p className="footer-txt">Pixel art</p>
+                      <p className="footer-txt">Animation</p>
+                      <p className="footer-txt">pixilart</p>
+                      <p className="footer-txt">2D</p>
+                    </Marquee>
+                  </div>
+                </div> 
+              </section>
+
+              <section className="site southside">
+                <div className="site-header">
+                  <h2 className="site-title southside-title">Aseprite</h2>
+                </div>
+                <div className="site-thumbnail aseprite-window" onClick={() => openAboutCard(2)}>
+                  <div className="aseprites">
+                    <img src="/multimedia/stationary.png" className='aseprite' />
+                    <img src="/multimedia/hero_run.gif" className='aseprite' />
+                    <img src="/multimedia/obstacle.gif" className='aseprite' />
+                  </div>
+                  <div className="site-about" id="site-about-2">
+                    <h3 className="site-about-header">About</h3>
+                    <p className="site-about-txt">These are sprites I've made in Aseprite for an unfinished chrome dino game clone with javascript.</p>
+                  </div>
+                </div>
+                <div className="site-footer">
+                  <div className="footer-part">
+                    <Marquee pauseOnHover="true" autoFill="true">
+                      <p className="footer-txt">Sprite</p>
+                      <p className="footer-txt">Pixel art</p>
+                      <p className="footer-txt">Animation</p>
+                      <p className="footer-txt">Aseprite</p>
+                      <p className="footer-txt">2D</p>
+                    </Marquee>
+                  </div>
+                </div> 
+              </section>
+
+              <section className="site bubble-sort">
+                <div className="site-header">
+                  <h2 className="site-title">Blender</h2>
+                </div>
+                <div className="site-thumbnail">
+                  <button onClick={() => openAboutCard(3)} >about</button>
+                  <BlenderSlider/>
+                  <div className="site-about" id="site-about-3" onClick={() => openAboutCard(3)}>
+                    <h3 className="site-about-header">About</h3>
+                    <p className="site-about-txt">3D models made with Blender. The donut, space bottle, and cyberpunk building were all modeled before the steampunk lamp to familiarize myself with Blender. The steampunk lamp is referenced from SteveGallagherLamps' Steampunk Lamp.</p>
+                  </div>
+                </div>
+                <div className="site-footer">
+                  <div className="footer-part">
+                    <Marquee pauseOnHover="true" autoFill="true">
+                      <p className="footer-txt">3D Modeling</p>
+                      <p className="footer-txt">Blender</p>
+                    </Marquee>
+                  </div>
+                </div> 
+              </section>
+            </section>
+          </>
         );
       default:
         return (
@@ -254,6 +402,7 @@ const Works = () => {
           {renderContent()}
         </section>
       </div>
+      <Tooltip id="tooltip" />
     </section>
   )
 }

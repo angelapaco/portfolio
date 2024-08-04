@@ -11,8 +11,7 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-    backdrop-filter: blur( 10px );
-    -webkit-backdrop-filter: blur( 10px );
+    background-color: #F4F3EF;
 }
 
 ul.nav-ul {

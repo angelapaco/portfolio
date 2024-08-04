@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
+    "@rive-app/react-canvas": "^4.13.5",
     "@spaceninja/half-tone": "^1.0.1",
     "framer-motion": "^11.3.19",
     "gsap": "^3.12.5",
@@ -19,8 +20,10 @@
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
     "react-router-dom": "^6.25.1",
+    "react-slick": "^0.30.2",
     "react-tooltip": "^5.27.1",
     "react-transition-group": "^4.4.5",
+    "slick-carousel": "^1.8.1",
     "split-type": "^0.3.4"
   },
   "devDependencies": {

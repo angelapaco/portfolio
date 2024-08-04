@@ -158,6 +158,18 @@ img.link-icons:hover {
     box-sizing: border-box;
 }
 
+.pixel-art-window, .aseprite-window {
+    height: 402.75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aseprite {
+    height: 200px;
+}
+
+
 .site-about {
     position: absolute;
     z-index: 7;
@@ -225,8 +237,36 @@ img.link-icons:hover {
     align-items: center;
 }
 
-.footer-txt1, .footer-txt2, .footer-txt3 {
-    border-left: solid 2px #1D448C;
+.rive-window {
+    height: 402.75px;
+}
+
+button {
+    background: #F4F3EF;
+    color: #1D448C;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 12px;
+    border: 3px solid #1D448C;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 5;
+}
+
+button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
 }
 
 @media screen and (max-width: 1400px) {
@@ -253,6 +293,9 @@ img.link-icons:hover {
     }
     .works-display {
         width: 62vw;
+    }
+    .game-about h3, .game-about p {
+        font-size: 13px;
     }
 }
 
@@ -294,6 +337,32 @@ img.link-icons:hover {
     }
 }
 
+@media screen and (max-width: 680px) {
+    .game-about h3, .game-about p {
+        font-size: 13px;
+        padding: 0px 5px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .game-about h3, .game-about p {
+        font-size: 13px;
+        padding: 0px 5px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .game-about h3, .game-about p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 556px) {
+    .game-about h3, .game-about p {
+        font-size: 10px;
+    }
+}
+
 @media screen and (max-width: 635px) {
     .site-about-header, .site-about-txt {
         font-size: 12px;
@@ -319,15 +388,27 @@ img.link-icons:hover {
     .site-about-header, .site-about-txt {
         font-size: 10px;
     }
+    .game-about h3, .game-about p {
+        font-size: 9px;
+    }
 }
 
 @media screen and (max-width: 417px) {
     .site-about-header, .site-about-txt {
         font-size: 10px;
     }
-
     .site-about h3, .site-about p {
         padding: 0px 5px;
+    }
+    .game-about h3, .game-about p {
+        font-size: 8px;
+        padding: 0px 1px;
+    }
+}
+
+@media screen and (max-width: 365px) {
+    .game-about h3, .game-about p {
+        font-size: 7px;
     }
 }
 
@@ -336,6 +417,6 @@ img.link-icons:hover {
         font-size: 11px;
     }
     .site-about-header, .site-about-txt {
-        font-size: 9px;
+        font-size: 8.5px;
     }
 }

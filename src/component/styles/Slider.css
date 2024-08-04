@@ -1,0 +1,48 @@
+.slick-slider {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    cursor: move; 
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.slick-list {
+    width: 100%;
+}
+
+.slick-track {
+    display: flex;
+    height: 345px;
+}
+
+.slick-slide {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.pixel-art-card, .blender-thumbnail {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pixel-art, .blender-model {
+    height: 320px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -40px;
+}
+
+.blender-model {
+    border: solid 2px #1D448C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
