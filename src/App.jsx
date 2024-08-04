@@ -68,7 +68,7 @@ function App() {
       </nav>
       <div ref={contentCon} className="content-container">
         <Routes>
-          <Route path="/home" element={<Transitions><Home key={refreshHome} /></Transitions>} />
+          <Route path="home" element={<Transitions><Home key={refreshHome} /></Transitions>} />
           <Route path="/about" element={<Transitions><About /></Transitions>} />
           <Route path="/works/site" element={<Transitions><Works /></Transitions>} />
           <Route path="/works/game" element={<Works />} />
@@ -82,7 +82,7 @@ function App() {
 
 export default function RootApp() {
   return (
-    <BrowserRouter basename='/portfolio/home'>
+    <BrowserRouter basename='/portfolio/'>
       <App />
     </BrowserRouter>
   );
