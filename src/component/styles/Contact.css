@@ -1,0 +1,33 @@
+.contact {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Jetbrains Mono";
+    gap: 40px;
+    font-size: 15px;
+}
+
+.contact p {
+    text-transform: uppercase;
+    margin: 5px 0px;
+}
+
+.contact img {
+    width: 35px;
+    margin: 0px 7px;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #1D448C;
+}
+
+.email p {
+    text-transform: none;
+}
