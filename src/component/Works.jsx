@@ -89,6 +89,11 @@ const Works = () => {
     window.open(videoUrl, '_blank');
   }
 
+  function openTimelapse() {
+    const timelapseUrl = import.meta.env.BASE_URL + "/thumbnails/clip-studio-paint.mp4";
+    window.open(timelapseUrl, '_blank');
+  }
+
   const renderContent = () => {
     switch (location.pathname) {
       case '/works/site':
@@ -246,7 +251,7 @@ const Works = () => {
           <>
             <div className="display-header">game</div>
             <section className="display-window">
-              <section className="site life-flow">
+            <section className="sitew">
                 <div className="site-header">
                   <h2 className="site-title">Capture</h2>
                 </div>
@@ -360,7 +365,7 @@ const Works = () => {
                 </div> 
               </section>
 
-              <section className="site bubble-sort">
+              <section className="site">
                 <div className="site-header">
                   <h2 className="site-title">Blender</h2>
                 </div>
@@ -377,6 +382,32 @@ const Works = () => {
                     <Marquee pauseOnHover="true" autoFill="true">
                       <p className="footer-txt">3D Modeling</p>
                       <p className="footer-txt">Blender</p>
+                    </Marquee>
+                  </div>
+                </div> 
+              </section>
+
+              <section className="site">
+                <div className="site-header">
+                  <h2 className="site-title">Clip Studio Paint</h2>
+                </div>
+                <div className="site-thumbnail" onClick={() => openAboutCard(4)} >
+                  <button onClick={openTimelapse} onMouseEnter={playBtnHover} className='watch-btn'>Full Screen</button>
+                  <video autoPlay muted playsInline loop preload="true" className="thumbnail">
+                    <source src={import.meta.env.BASE_URL + "/thumbnails/clip-studio-paint.mp4"} type="video/mp4"/>
+                  </video>
+                  <div className="site-about game-about" id="site-about-4">
+                    <h3 className="site-about-header">About</h3>
+                    <p className="site-about-txt">An unfinished reimagined version of Kaveh, a playable character from the game Genshin Impact, set in modern times. Drawn in Clip Studio Paint.</p>
+                  </div>
+                </div>
+                <div className="site-footer">
+                  <div className="footer-part">
+                    <Marquee pauseOnHover="true" autoFill="true">
+                      <p className="footer-txt">2D</p>
+                      <p className="footer-txt">Clip Studio Paint</p>
+                      <p className="footer-txt">Digital Drawing</p>
+                      <p className="footer-txt">WIP</p>
                     </Marquee>
                   </div>
                 </div> 
