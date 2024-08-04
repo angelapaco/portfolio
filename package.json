@@ -24,7 +24,8 @@
     "react-tooltip": "^5.27.1",
     "react-transition-group": "^4.4.5",
     "slick-carousel": "^1.8.1",
-    "split-type": "^0.3.4"
+    "split-type": "^0.3.4",
+    "use-sound": "^4.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

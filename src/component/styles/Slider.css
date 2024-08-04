@@ -32,7 +32,8 @@
 }
 
 .pixel-art, .blender-model {
-    height: 320px;
+    height: 19vw;
+    transition: all 0.2s ease;
 }
 
 .slick-dots {
@@ -42,7 +43,39 @@
 
 .blender-model {
     border: solid 2px #1D448C;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+@media screen and (max-width: 1440px) {
+    .pixel-art, .blender-model {
+        height: 22vw;
+        transition: all 0.2s ease;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .pixel-art, .blender-model {
+        height: 28vw;
+        transition: all 0.2s ease;
+    }
+}
+
+@media screen and (max-width: 865px) {
+    .pixel-art, .blender-model {
+        height: 36vw;
+        transition: all 0.2s ease;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .pixel-art, .blender-model {
+        height: 48vw;
+        transition: all 0.2s ease;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .pixel-art, .blender-model {
+        height: 48vw;
+        transition: all 0.2s ease;
+    }
 }

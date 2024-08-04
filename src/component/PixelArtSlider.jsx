@@ -21,10 +21,10 @@ const PixelArtSlider = () => {
   return (
     <Slider {...settings}>
       <div className="pixel-art-card">
-        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-2.gif"/>
+        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-3.gif"/>
       </div>
       <div className="pixel-art-card">
-        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-3.gif"/>
+        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-2.gif"/>
       </div>
       <div className="pixel-art-card">
         <img className="pixel-art" src="/multimedia/pixilart/pixel-art-4.gif"/>

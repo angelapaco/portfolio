@@ -166,7 +166,11 @@ img.link-icons:hover {
 }
 
 .aseprite {
-    height: 200px;
+    height: 150px;
+}
+
+#obstacle {
+    height: 70px;
 }
 
 

@@ -8,6 +8,10 @@ import { BrowserRouter as Router, Route, Routes, NavLink, useLocation } from 're
 import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
 import PixelArtSlider from './PixelArtSlider';
 import BlenderSlider from './BlenderSlider';
+import useSound from 'use-sound';
+import hoverPop from '/src/assets/audio/menuPop.mp3';
+import boopLink from '/src/assets/audio/boopLink.mp3';
+import buttonClick from '/src/assets/audio/txtOut.mp3';
 
 const Works = () => {
   let visibilityState = [false];
@@ -61,7 +65,7 @@ const Works = () => {
   const location = useLocation();
 
   const { rive, RiveComponent } = useRive({
-    src: '/multimedia/AP-character.riv',
+    src: '/multimedia/ap-char.riv',
     stateMachines: "State Machine",
     layout: new Layout({
       fit: Fit.Cover, // Change to: rive.Fit.Contain, or Cover
@@ -70,7 +74,13 @@ const Works = () => {
     autoplay: true,
   });
 
-  
+  const menuPopSrc = hoverPop;
+  const boopLinkSrc = boopLink;
+  const btnClickSrc = buttonClick;
+  const [play] = useSound(menuPopSrc);
+  const [playBoop] = useSound(boopLinkSrc);
+  const [playBtnHover] = useSound(menuPopSrc);
+  const [playBtnClick] = useSound(btnClickSrc);
 
   const renderContent = () => {
     switch (location.pathname) {
@@ -83,7 +93,7 @@ const Works = () => {
                 <div className="site-header">
                   <h2 className="site-title">Life Flow</h2>
                   <div className="links">
-                    <a href="https://github.com/angelapaco/Life-Flow" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" ><img className="link-icons" src="/svg/github-mark.svg" alt="github logo"/></a>
+                    <a href="https://github.com/angelapaco/Life-Flow" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/github-mark.svg" alt="github logo"/></a>
                   </div>
                 </div>
                 <div className="site-thumbnail" onClick={() => openAboutCard(0)} >
@@ -123,8 +133,8 @@ const Works = () => {
                 <div className="site-header">
                   <h2 className="site-title">Sweets District</h2>
                   <div className="links">
-                    <a href="https://github.com/angelapaco/SweetsDistrict" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" ><img className="link-icons" src="/svg/github-mark.svg" alt="github logo"/></a>
-                    <a href="https://angelapaco.github.io/SweetsDistrict/" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="site" ><img className="link-icons" src="/svg/external-link.svg" alt="visit site icon"/></a>
+                    <a href="https://github.com/angelapaco/SweetsDistrict" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/github-mark.svg" alt="github logo"/></a>
+                    <a href="https://angelapaco.github.io/SweetsDistrict/" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="site" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/external-link.svg" alt="visit site icon"/></a>
                   </div>
                 </div>
                 <div className="site-thumbnail" onClick={() => openAboutCard(1)}>
@@ -158,7 +168,7 @@ const Works = () => {
                 <div className="site-header">
                   <h2 className="site-title southside-title">Income Statement and Log Management System</h2>
                   <div className="links">
-                    <a href="https://github.com/angelapaco/Income-Statement-and-Log-Mangement-System" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" ><img className="link-icons" src="/svg/github-mark.svg" alt="github logo"/></a>
+                    <a href="https://github.com/angelapaco/Income-Statement-and-Log-Mangement-System" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/github-mark.svg" alt="github logo"/></a>
                   </div>
                 </div>
                 <div className="site-thumbnail" onClick={() => openAboutCard(2)}>
@@ -194,8 +204,8 @@ const Works = () => {
                 <div className="site-header">
                   <h2 className="site-title southside-title">Bubble Sort with JavaScript</h2>
                   <div className="links">
-                    <a href="https://github.com/angelapaco/Bubble-Sort-Javascript" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" ><img className="link-icons" src="/svg/github-mark.svg" alt="github logo"/></a>
-                    <a href="https://angelapaco.github.io/Bubble-Sort-Javascript/" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="site" ><img className="link-icons" src="/svg/external-link.svg" alt="visit site icon"/></a>
+                    <a href="https://github.com/angelapaco/Bubble-Sort-Javascript" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/github-mark.svg" alt="github logo"/></a>
+                    <a href="https://angelapaco.github.io/Bubble-Sort-Javascript/" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="site" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/external-link.svg" alt="visit site icon"/></a>
                   </div>
                 </div>
                 <div className="site-thumbnail" onClick={() => openAboutCard(3)}>
@@ -260,7 +270,7 @@ const Works = () => {
       case '/works/multimedia':
         return (
           <>
-          <div className="display-header">Multimedia</div>
+          <div className="display-header">DIGITAL ART</div>
             <section className="display-window">
               <section className="site rive-animation">
                 <div className="site-header">
@@ -268,7 +278,7 @@ const Works = () => {
                 </div>
                 <div className="site-thumbnail rive-window">
                   <RiveComponent/>
-                  <button onClick={() => openAboutCard(0)} >about</button>
+                  <button onClick={() => {playBtnClick(), openAboutCard(0)}} onMouseEnter={playBtnHover}>about</button>
                   <div className="site-about" id="site-about-0" onClick={() => openAboutCard(0)} >
                     <h3 className="site-about-header">About</h3>
                     <p className="site-about-txt">My animated character in Rive. The first project made to explore Rive and it's use with React.</p>
@@ -292,12 +302,9 @@ const Works = () => {
               <section className="site Pixel Art">
                 <div className="site-header">
                   <h2 className="site-title">Pixel art with Pixilart</h2>
-                  <div className="links">
-                    <a href="https://scratch.mit.edu/users/ja9ice/" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="scratch profile" ><img className="link-icons" src="/svg/scratch.svg" alt="scratch logo"/></a>
-                  </div>
                 </div>
                 <div className="site-thumbnail pixel-art-window">
-                  <button onClick={() => openAboutCard(1)} >about</button>
+                <button onClick={() => {playBtnClick(), openAboutCard(1)}} onMouseEnter={playBtnHover}>about</button>
                   <PixelArtSlider/>
                   <div className="site-about" id="site-about-1" onClick={() => openAboutCard(1)} >
                     <h3 className="site-about-header">About</h3>
@@ -317,15 +324,15 @@ const Works = () => {
                 </div> 
               </section>
 
-              <section className="site southside">
+              <section className="site">
                 <div className="site-header">
-                  <h2 className="site-title southside-title">Aseprite</h2>
+                  <h2 className="site-title">Aseprite</h2>
                 </div>
                 <div className="site-thumbnail aseprite-window" onClick={() => openAboutCard(2)}>
                   <div className="aseprites">
                     <img src="/multimedia/stationary.png" className='aseprite' />
                     <img src="/multimedia/hero_run.gif" className='aseprite' />
-                    <img src="/multimedia/obstacle.gif" className='aseprite' />
+                    <img src="/multimedia/obstacle.gif" className='aseprite' id='obstacle'/>
                   </div>
                   <div className="site-about" id="site-about-2">
                     <h3 className="site-about-header">About</h3>
@@ -350,7 +357,7 @@ const Works = () => {
                   <h2 className="site-title">Blender</h2>
                 </div>
                 <div className="site-thumbnail">
-                  <button onClick={() => openAboutCard(3)} >about</button>
+                <button onClick={() => {playBtnClick(), openAboutCard(3)}} onMouseEnter={playBtnHover}>about</button>
                   <BlenderSlider/>
                   <div className="site-about" id="site-about-3" onClick={() => openAboutCard(3)}>
                     <h3 className="site-about-header">About</h3>
@@ -385,14 +392,14 @@ const Works = () => {
           <div className="works-header">menu</div>
           <div className="works-option">
             <ul className="works-ul">
-              <li className="works-list">
+              <li className="works-list" onMouseEnter={play}>
                 <NavLink to="/works/site" className={({ isActive }) => (isActive ? 'active' : '')}>[1] site</NavLink>
               </li>
-              <li className="works-list">
+              <li className="works-list" onMouseEnter={play}>
                 <NavLink to="/works/game" className={({ isActive }) => (isActive ? 'active' : '')}>[2] game</NavLink>
               </li>
-              <li className="works-list">
-                <NavLink to="/works/multimedia" className={({ isActive }) => (isActive ? 'active' : '')}>[3] multimedia</NavLink>
+              <li className="works-list" onMouseEnter={play}>
+                <NavLink to="/works/multimedia" className={({ isActive }) => (isActive ? 'active' : '')}>[3] digital art</NavLink>
               </li>
             </ul>
           </div>

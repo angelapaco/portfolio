@@ -15,7 +15,7 @@ const BlenderSlider = () => {
     autoplaySpeed: 2500,
     cssEase: "ease",
     draggable: true, 
-    swipeToSlide: true,
+    swipeToSlide: true
   };
 
   return (
@@ -37,9 +37,6 @@ const BlenderSlider = () => {
       </div>
       <div className="blender-thumbnail">
         <img className="blender-model" src="/multimedia/blender/rendered-image-3.png"/>
-      </div>
-      <div className="blender-thumbnail">
-        <img className="blender-model" src="/multimedia/blender/rendered-image-4.png"/>
       </div>
       <div className="blender-thumbnail">
         <img className="blender-model" src="/multimedia/blender/rendered-image-5.png"/>
