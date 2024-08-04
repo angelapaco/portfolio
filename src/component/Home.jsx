@@ -4,12 +4,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollDown from './ScrollDown';
 import { useGSAP } from '@gsap/react';
+import txtIn from '/src/assets/audio/txtIn.mp3';
+import txtOut from '/src/assets/audio/txtOut.mp3';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
     console.log("home up");
-
     useGSAP(() => {  
         gsap.timeline({
             scrollTrigger: {
@@ -22,11 +23,9 @@ const Home = () => {
             } 
         });
 
-        const baseUrl = import.meta.env.BASE_URL;
         const audioFiles = [
-            `${baseUrl}src/assets/audio/txtIn.mp3`,
-            `${baseUrl}src/assets/audio/txtOut.mp3`
-        ];
+            txtIn, txtOut
+        ]
 
         function playAudio(index) {
             const audio = new Audio(audioFiles[index]);
@@ -46,31 +45,31 @@ const Home = () => {
                 scrub: true,
                 // markers: {startColor: "pink", endColor: "violet"},
             }
-        });
+        })
         updateTexts
-            .to('body', {duration: 1})
-            .set('.intro-txt span', { innerHTML: "Computer Science Student"}, 0.03)
-            .set('.intro-txt span', { fontSize: "8vw"}, 0.03)
-            .call(() => playAudio(0), null, 0.03)
-            .set('.intro-txt span', { innerHTML: 'Game Development <br> enthusiast'}, 0.14)
-            .call(() => playAudio(0), null, 0.14)
-            .set('.intro-txt span', { innerHTML: "Frontend Development <br> enthusiast"}, 0.25)
-            .call(() => playAudio(0), null, 0.25)
-            .set('.intro-txt span', { innerHTML: "Hobbyist <br> artist"}, 0.36)
-            .call(() => playAudio(0), null, 0.36)
-            .set('.intro-txt span', { innerHTML: "Hobbyist <br> video editor"}, 0.47)
-            .call(() => playAudio(0), null, 0.47);
+        .to('body', {duration: 1})
+        .set('.intro-txt span', { innerHTML: "Computer Science Student"}, 0.03)
+        .set('.intro-txt span', { fontSize: "8vw"}, 0.03)
+        .call(() => playAudio(0), null, 0.03)
+        .set('.intro-txt span', { innerHTML: 'Game Development <br> enthusiast'}, 0.14)
+        .call(() => playAudio(0), null, 0.14)
+        .set('.intro-txt span', { innerHTML: "Frontend Development <br> enthusiast"}, 0.25)
+        .call(() => playAudio(0), null, 0.25)
+        .set('.intro-txt span', { innerHTML: "Hobbyist <br> artist"}, 0.36)
+        .call(() => playAudio(0), null, 0.36)
+        .set('.intro-txt span', { innerHTML: "Hobbyist <br> video editor"}, 0.47)
+        .call(() => playAudio(0), null, 0.47);
     }, []);
 
     return (
-        <>
-            <div className="container1">
-                <div className="wrapper1">
-                    <h1 className="intro-txt"><span>Angela</span></h1>
-                    <ScrollDown />
-                </div>
+    <>
+        <div className="container1">
+            <div className="wrapper1">
+                <h1 className="intro-txt"><span>Angela</span></h1>
+                <ScrollDown/>
             </div>
-        </>
+        </div>
+    </>
     );
 };
 
