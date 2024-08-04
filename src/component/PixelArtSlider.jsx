@@ -21,28 +21,28 @@ const PixelArtSlider = () => {
   return (
     <Slider {...settings}>
       <div className="pixel-art-card">
-        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-3.gif"/>
+        <img className="pixel-art" src={import.meta.env.BASE_URL + "/multimedia/pixilart/pixel-art-3.gif"}/>
       </div>
       <div className="pixel-art-card">
-        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-2.gif"/>
+        <img className="pixel-art" src={import.meta.env.BASE_URL + "/multimedia/pixilart/pixel-art-2.gif"}/>
       </div>
       <div className="pixel-art-card">
-        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-4.gif"/>
+        <img className="pixel-art" src={import.meta.env.BASE_URL + "/multimedia/pixilart/pixel-art-4.gif"}/>
       </div>
       <div className="pixel-art-card">
-        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-5.png"/>
+        <img className="pixel-art" src={import.meta.env.BASE_URL + "/multimedia/pixilart/pixel-art-5.png"}/>
       </div>
       <div className="pixel-art-card">
-        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-6.png"/>
+        <img className="pixel-art" src={import.meta.env.BASE_URL + "/multimedia/pixilart/pixel-art-6.png"}/>
       </div>
       <div className="pixel-art-card">
-        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-7.png"/>
+        <img className="pixel-art" src={import.meta.env.BASE_URL + "/multimedia/pixilart/pixel-art-7.png"}/>
       </div>
       <div className="pixel-art-card">
-        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-8.png"/>
+        <img className="pixel-art" src={import.meta.env.BASE_URL + "/multimedia/pixilart/pixel-art-8.png"}/>
       </div>
       <div className="pixel-art-card">
-        <img className="pixel-art" src="/multimedia/pixilart/pixel-art-9.png"/>
+        <img className="pixel-art" src={import.meta.env.BASE_URL + "/multimedia/pixilart/pixel-art-9.png"}/>
       </div>
     </Slider>
   )

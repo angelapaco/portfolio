@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Home from './component/Home';
 import About from './component/About';
@@ -33,10 +33,10 @@ function App() {
       } 
     }); 
 
-    if (location.pathname === '/') {
+    if (location.pathname === '/portfolio') {
       console.log("200vh height");
       gsap.set(contentCon.current, { height: '200vh' });
-      setRefreshHome(true); // Trigger re-render of Home component
+      setRefreshHome(true); 
       gsap.timeline({
         scrollTrigger: {
           trigger: ".app-container",
@@ -57,7 +57,7 @@ function App() {
 
   useEffect(() => {
     if (refreshHome) {
-      setRefreshHome(false); // Reset the state after setting it
+      setRefreshHome(false);
     }
   }, [refreshHome]);
 
@@ -68,7 +68,7 @@ function App() {
       </nav>
       <div ref={contentCon} className="content-container">
         <Routes>
-          <Route path="/portfolio/" element={<Transitions><Home key={refreshHome} /></Transitions>} />
+          <Route path="/home" element={<Transitions><Home key={refreshHome} /></Transitions>} />
           <Route path="/about" element={<Transitions><About /></Transitions>} />
           <Route path="/works/site" element={<Transitions><Works /></Transitions>} />
           <Route path="/works/game" element={<Works />} />
@@ -82,8 +82,8 @@ function App() {
 
 export default function RootApp() {
   return (
-    <Router>
+    <BrowserRouter basename='/portfolio'>
       <App />
-    </Router>
+    </BrowserRouter>
   );
 }

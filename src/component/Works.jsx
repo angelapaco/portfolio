@@ -12,6 +12,8 @@ import useSound from 'use-sound';
 import hoverPop from '/src/assets/audio/menuPop.mp3';
 import boopLink from '/src/assets/audio/boopLink.mp3';
 import buttonClick from '/src/assets/audio/txtOut.mp3';
+import githubLogo from '/src/assets/svg/github-mark.svg';
+import siteLogo from '/src/assets/svg/external-link.svg';
 
 const Works = () => {
   let visibilityState = [false];
@@ -65,7 +67,7 @@ const Works = () => {
   const location = useLocation();
 
   const { rive, RiveComponent } = useRive({
-    src: '/multimedia/ap-char.riv',
+    src: import.meta.env.BASE_URL +  '/multimedia/ap-char.riv',
     stateMachines: "State Machine",
     layout: new Layout({
       fit: Fit.Cover, // Change to: rive.Fit.Contain, or Cover
@@ -83,7 +85,7 @@ const Works = () => {
   const [playBtnClick] = useSound(btnClickSrc);
 
   function openVid() {
-    const videoUrl = "/thumbnails/capture.mp4";
+    const videoUrl = import.meta.env.BASE_URL + "/thumbnails/capture.mp4";
     window.open(videoUrl, '_blank');
   }
 
@@ -98,12 +100,12 @@ const Works = () => {
                 <div className="site-header">
                   <h2 className="site-title">Life Flow</h2>
                   <div className="links">
-                    <a href="https://github.com/angelapaco/Life-Flow" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/github-mark.svg" alt="github logo"/></a>
+                    <a href="https://github.com/angelapaco/Life-Flow" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src={githubLogo} alt="github logo"/></a>
                   </div>
                 </div>
                 <div className="site-thumbnail" onClick={() => openAboutCard(0)} >
                   <video autoPlay muted playsInline loop preload="true" onContextMenu={e => e.preventDefault()} className="thumbnail">
-                    <source src="/thumbnails/life-flow.mp4" type="video/mp4"/>
+                    <source src={import.meta.env.BASE_URL + "/thumbnails/life-flow.mp4"} type="video/mp4"/>
                   </video>
                   <div className="site-about" id="site-about-0">
                     <h3 className="site-about-header">About</h3>
@@ -138,13 +140,13 @@ const Works = () => {
                 <div className="site-header">
                   <h2 className="site-title">Sweets District</h2>
                   <div className="links">
-                    <a href="https://github.com/angelapaco/SweetsDistrict" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/github-mark.svg" alt="github logo"/></a>
-                    <a href="https://angelapaco.github.io/SweetsDistrict/" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="site" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/external-link.svg" alt="visit site icon"/></a>
+                    <a href="https://github.com/angelapaco/SweetsDistrict" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src={githubLogo} alt="github logo"/></a>
+                    <a href="https://angelapaco.github.io/SweetsDistrict/" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="site" onMouseEnter={playBoop} ><img className="link-icons" src={siteLogo} alt="visit site icon"/></a>
                   </div>
                 </div>
                 <div className="site-thumbnail" onClick={() => openAboutCard(1)}>
                   <video autoPlay muted playsInline loop preload="true" onContextMenu={e => e.preventDefault()} className="thumbnail">
-                    <source src="/thumbnails/sweets-district.mp4" type="video/mp4"/>
+                    <source src={import.meta.env.BASE_URL + "/thumbnails/sweets-district.mp4"} type="video/mp4"/>
                   </video>
                   <div className="site-about" id="site-about-1">
                     <h3 className="site-about-header">About</h3>
@@ -173,12 +175,12 @@ const Works = () => {
                 <div className="site-header">
                   <h2 className="site-title southside-title">Income Statement and Log Management System</h2>
                   <div className="links">
-                    <a href="https://github.com/angelapaco/Income-Statement-and-Log-Mangement-System" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/github-mark.svg" alt="github logo"/></a>
+                    <a href="https://github.com/angelapaco/Income-Statement-and-Log-Mangement-System" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src={githubLogo} alt="github logo"/></a>
                   </div>
                 </div>
                 <div className="site-thumbnail" onClick={() => openAboutCard(2)}>
                   <video autoPlay muted playsInline loop preload="true" onContextMenu={e => e.preventDefault()} className="thumbnail">
-                    <source src="/thumbnails/southside.mp4" type="video/mp4"/>
+                    <source src={import.meta.env.BASE_URL + "/thumbnails/southside.mp4"} type="video/mp4"/>
                   </video>
                   <div className="site-about" id="site-about-2">
                     <h3 className="site-about-header">About</h3>
@@ -209,13 +211,13 @@ const Works = () => {
                 <div className="site-header">
                   <h2 className="site-title southside-title">Bubble Sort with JavaScript</h2>
                   <div className="links">
-                    <a href="https://github.com/angelapaco/Bubble-Sort-Javascript" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/github-mark.svg" alt="github logo"/></a>
-                    <a href="https://angelapaco.github.io/Bubble-Sort-Javascript/" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="site" onMouseEnter={playBoop} ><img className="link-icons" src="/src/assets/svg/external-link.svg" alt="visit site icon"/></a>
+                    <a href="https://github.com/angelapaco/Bubble-Sort-Javascript" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="github repo" onMouseEnter={playBoop} ><img className="link-icons" src={githubLogo} alt="github logo"/></a>
+                    <a href="https://angelapaco.github.io/Bubble-Sort-Javascript/" target="_blank" data-tooltip-id="tooltip" data-tooltip-place="bottom" data-tooltip-content="site" onMouseEnter={playBoop} ><img className="link-icons" src={siteLogo} alt="visit site icon"/></a>
                   </div>
                 </div>
                 <div className="site-thumbnail" onClick={() => openAboutCard(3)}>
                   <video autoPlay muted playsInline loop preload="true" onContextMenu={e => e.preventDefault()} className="thumbnail">
-                    <source src="/thumbnails/bubble-sort.mp4" type="video/mp4"/>
+                    <source src={import.meta.env.BASE_URL + "/thumbnails/bubble-sort.mp4"} type="video/mp4"/>
                   </video>
                   <div className="site-about" id="site-about-3">
                     <h3 className="site-about-header">About</h3>
@@ -251,7 +253,7 @@ const Works = () => {
                 <div className="site-thumbnail" onClick={() => openAboutCard(0)} >
                   <button onClick={openVid} onMouseEnter={playBtnHover} className='watch-btn'>Full Screen with Audio</button>
                   <video autoPlay muted playsInline loop preload="true" className="thumbnail">
-                    <source src="/thumbnails/capture.mp4" type="video/mp4"/>
+                    <source src={import.meta.env.BASE_URL + "/thumbnails/capture.mp4"} type="video/mp4"/>
                   </video>
                   <div className="site-about game-about" id="site-about-0">
                     <h3 className="site-about-header">About</h3>
@@ -336,9 +338,9 @@ const Works = () => {
                 </div>
                 <div className="site-thumbnail aseprite-window" onClick={() => openAboutCard(2)}>
                   <div className="aseprites">
-                    <img src="/multimedia/stationary.png" className='aseprite' />
-                    <img src="/multimedia/hero_run.gif" className='aseprite' />
-                    <img src="/multimedia/obstacle.gif" className='aseprite' id='obstacle'/>
+                    <img src={import.meta.env.BASE_URL + "/multimedia/stationary.png"} className='aseprite' />
+                    <img src={import.meta.env.BASE_URL + "/multimedia/hero_run.gif"} className='aseprite' />
+                    <img src={import.meta.env.BASE_URL + "/multimedia/obstacle.gif"} className='aseprite' id='obstacle'/>
                   </div>
                   <div className="site-about" id="site-about-2">
                     <h3 className="site-about-header">About</h3>

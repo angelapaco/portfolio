@@ -21,25 +21,25 @@ const BlenderSlider = () => {
   return (
     <Slider {...settings}>
       <div className="blender-thumbnail">
-        <img className="blender-model" src="/multimedia/blender/donut.png"/>
+        <img className="blender-model" src={import.meta.env.BASE_URL + "/multimedia/blender/donut.png"}/>
       </div>
       <div className="blender-thumbnail">
-        <img className="blender-model" src="/multimedia/blender/space-bottle.png"/>
+        <img className="blender-model" src={import.meta.env.BASE_URL + "/multimedia/blender/space-bottle.png"}/>
       </div>
       <div className="blender-thumbnail">
-        <img className="blender-model" src="/multimedia/blender/cyberpunk-building.png"/>
+        <img className="blender-model" src={import.meta.env.BASE_URL + "/multimedia/blender/cyberpunk-building.png"}/>
       </div>
       <div className="blender-thumbnail">
-        <img className="blender-model" src="/multimedia/blender/rendered-image-1.png"/>
+        <img className="blender-model" src={import.meta.env.BASE_URL + "/multimedia/blender/rendered-image-1.png"}/>
       </div>
       <div className="blender-thumbnail">
-        <img className="blender-model" src="/multimedia/blender/rendered-image-2.png"/>
+        <img className="blender-model" src={import.meta.env.BASE_URL + "/multimedia/blender/rendered-image-2.png"}/>
       </div>
       <div className="blender-thumbnail">
-        <img className="blender-model" src="/multimedia/blender/rendered-image-3.png"/>
+        <img className="blender-model" src={import.meta.env.BASE_URL + "/multimedia/blender/rendered-image-3.png"}/>
       </div>
       <div className="blender-thumbnail">
-        <img className="blender-model" src="/multimedia/blender/rendered-image-5.png"/>
+        <img className="blender-model" src={import.meta.env.BASE_URL + "/multimedia/blender/rendered-image-5.png"}/>
       </div>
     </Slider>
   )

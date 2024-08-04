@@ -22,8 +22,8 @@ const Home = () => {
         });
 
         const audioFiles = [
-            '/src/assets/audio/txtIn.mp3',
-            '/src/assets/audio/txtOut.mp3'
+            './src/assets/audio/txtIn.mp3',
+            './src/assets/audio/txtOut.mp3'
         ]
 
         function playAudio(index) {
