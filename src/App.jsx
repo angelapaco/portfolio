@@ -82,7 +82,7 @@ function App() {
 
 export default function RootApp() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/portfolio/'>
       <App />
     </BrowserRouter>
   );
