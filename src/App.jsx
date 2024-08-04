@@ -33,7 +33,7 @@ function App() {
       } 
     }); 
 
-    if (location.pathname === '/portfolio/' || location.pathname === '/portfolio') {
+    if (location.pathname === '/portfolio/' || location.pathname === '/portfolio' || location.pathname === '/') {
       console.log("200vh height");
       gsap.set(contentCon.current, { height: '200vh' });
       setRefreshHome(true); 
