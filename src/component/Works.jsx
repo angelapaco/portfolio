@@ -447,9 +447,9 @@ const Works = () => {
                 <div className="site-footer">
                   <div className="footer-part">
                     <Marquee pauseOnHover="true" autoFill="true">
-                      <p className="footer-txt">Game Design</p>
-                      <p className="footer-txt">3D</p>
-                      <p className="footer-txt">Unity</p>
+                      <p className="footer-txt">Animation</p>
+                      <p className="footer-txt">Photoshop</p>
+                      <p className="footer-txt">Sony Vegas Pro</p>
                     </Marquee>
                   </div>
                 </div> 
