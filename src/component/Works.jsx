@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/Works.css';
 import { Tooltip } from 'react-tooltip'
 import './styles/Tooltip.css'
@@ -84,6 +84,12 @@ const Works = () => {
   const [playBtnHover] = useSound(menuPopSrc);
   const [playBtnClick] = useSound(btnClickSrc);
 
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
   function openVid() {
     const videoUrl = import.meta.env.BASE_URL + "/thumbnails/capture.mp4";
     window.open(videoUrl, '_blank');
@@ -92,6 +98,11 @@ const Works = () => {
   function openTimelapse() {
     const timelapseUrl = import.meta.env.BASE_URL + "/thumbnails/clip-studio-paint.mp4";
     window.open(timelapseUrl, '_blank');
+  }
+
+  function openAnim() {
+    const psAnimUrl = import.meta.env.BASE_URL + "/thumbnails/animation.mp4";
+    window.open(psAnimUrl, '_blank');
   }
 
   const renderContent = () => {
@@ -251,16 +262,19 @@ const Works = () => {
           <>
             <div className="display-header">game</div>
             <section className="display-window">
-            <section className="sitew">
+            <section className="site">
                 <div className="site-header">
                   <h2 className="site-title">Capture</h2>
                 </div>
-                <div className="site-thumbnail" onClick={() => openAboutCard(0)} >
-                  <button onClick={openVid} onMouseEnter={playBtnHover} className='watch-btn'>Full Screen with Audio</button>
-                  <video autoPlay muted playsInline loop preload="true" className="thumbnail">
+                <div className="site-thumbnail">
+                  <button onClick={toggleMute} className='mute-btn watch-btn' onMouseEnter={playBtnHover}>
+                    {isMuted ? 'Unmute' : 'Mute'}
+                  </button>
+                  <button onClick={openVid} onMouseEnter={playBtnHover} className='watch-btn anim-full'>Full Screen</button>
+                  <video autoPlay muted={isMuted} playsInline loop preload="true" className="thumbnail" onClick={() => openAboutCard(0)}>
                     <source src={import.meta.env.BASE_URL + "/thumbnails/capture.mp4"} type="video/mp4"/>
                   </video>
-                  <div className="site-about game-about" id="site-about-0">
+                  <div className="site-about game-about" id="site-about-0"  onClick={() => openAboutCard(0)}>
                     <h3 className="site-about-header">About</h3>
                     <p className="site-about-txt">"Capture" is a 3D horror game developed in Unity for our game development course in third-year computer science. Players are equipped with a polaroid camera that can temporarily stun a chasing entity when photographed. Limited polaroid films are scattered throughout the area for players to find and use strategically. The objective is to gather items and escape without being captured.</p>
                     <h3 className="site-about-header about-header">Role</h3>
@@ -408,6 +422,34 @@ const Works = () => {
                       <p className="footer-txt">Clip Studio Paint</p>
                       <p className="footer-txt">Digital Drawing</p>
                       <p className="footer-txt">WIP</p>
+                    </Marquee>
+                  </div>
+                </div> 
+              </section>
+
+              <section className="site">
+                <div className="site-header">
+                  <h2 className="site-title">Animation</h2>
+                </div>
+                <div className="site-thumbnail">
+                  <button onClick={toggleMute} className='mute-btn watch-btn' onMouseEnter={playBtnHover}>
+                    {isMuted ? 'Unmute' : 'Mute'}
+                  </button>
+                  <button onClick={openAnim} onMouseEnter={playBtnHover} className='watch-btn anim-full'>Full Screen</button>
+                  <video autoPlay muted={isMuted} playsInline loop preload="true" className="thumbnail" onClick={() => openAboutCard(5)} >
+                    <source src={import.meta.env.BASE_URL + "/thumbnails/animation.mp4"} type="video/mp4"/>
+                  </video>
+                  <div className="site-about game-about" id="site-about-5" onClick={() => openAboutCard(5)} >
+                    <h3 className="site-about-header">About</h3>
+                    <p className="site-about-txt">This animation is a project from one of our courses, where we were tasked with creating an animation in Photoshop. Filters were applied to each frame to achieve the comic book effect, while the rest of the animation elements were hand-drawn and animated frame by frame.</p>
+                  </div>
+                </div>
+                <div className="site-footer">
+                  <div className="footer-part">
+                    <Marquee pauseOnHover="true" autoFill="true">
+                      <p className="footer-txt">Game Design</p>
+                      <p className="footer-txt">3D</p>
+                      <p className="footer-txt">Unity</p>
                     </Marquee>
                   </div>
                 </div> 
