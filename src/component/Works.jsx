@@ -297,7 +297,7 @@ const Works = () => {
       case '/works/multimedia':
         return (
           <>
-          <div className="display-header">DIGITAL ART</div>
+          <div className="display-header">Multimedia</div>
             <section className="display-window">
               <section className="site rive-animation">
                 <div className="site-header">
@@ -480,7 +480,7 @@ const Works = () => {
                 <NavLink to="/works/game" className={({ isActive }) => (isActive ? 'active' : '')}>[2] game</NavLink>
               </li>
               <li className="works-list" onMouseEnter={play}>
-                <NavLink to="/works/multimedia" className={({ isActive }) => (isActive ? 'active' : '')}>[3] digital art</NavLink>
+                <NavLink to="/works/multimedia" className={({ isActive }) => (isActive ? 'active' : '')}>[3] Multimedia</NavLink>
               </li>
             </ul>
           </div>
