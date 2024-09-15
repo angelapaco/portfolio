@@ -308,7 +308,7 @@ const Works = () => {
                   <button onClick={() => {playBtnClick(), openAboutCard(0)}} onMouseEnter={playBtnHover}>about</button>
                   <div className="site-about" id="site-about-0" onClick={() => openAboutCard(0)} >
                     <h3 className="site-about-header">About</h3>
-                    <p className="site-about-txt">My animated character in Rive. The first project made to explore Rive and it's use with React.</p>
+                    <p className="site-about-txt">My animated character in Rive. The first project made to explore Rive and its use with React.</p>
                   </div>
                 </div>
                 <div className="site-footer">
